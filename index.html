@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAWAT CAFE — Where Every Bite Feels Like Home</title>
+  <meta name="description" content="DAWAT CAFE offers freshly made pizza, burgers, momos, chowmin and more. Order online for quick delivery. Taste the love in every bite.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <i class="fas fa-mug-hot"></i>
+        <span>DAWAT<span class="logo-accent">CAFE</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO SECTION ═══════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <span class="hero-badge">
+        <i class="fas fa-star"></i> EST. 2024 — PREMIUM CAFE
+      </span>
+      <h1 class="hero-title">
+        Where Every Bite<br>
+        Feels Like <span class="text-gradient">Home</span>
+      </h1>
+      <p class="hero-subtitle">
+        Freshly crafted flavors, warm vibes, and food that brings people together.
+        Experience the art of dining at Dawat Cafe.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary btn-glow">
+          <i class="fas fa-utensils"></i> Explore Menu
+        </a>
+        <a href="#about" class="btn btn-outline">
+          <i class="fas fa-info-circle"></i> Our Story
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Menu Items</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.8</span>
+          <span class="stat-label">Rating ⭐</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">30</span>
+          <span class="stat-label">Min Delivery</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MENU SECTION ═══════════════ -->
+  <section class="menu-section" id="menu">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag"><i class="fas fa-fire"></i> Our Specials</span>
+      <h2 class="section-title">Explore Our <span class="text-gradient">Menu</span></h2>
+      <p class="section-desc">Handpicked favorites crafted with love. Swipe through our delicious offerings.</p>
+    </div>
+
+    <!-- Swiper 3D Carousel -->
+    <div class="swiper menu-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper" id="menuSwiperWrapper">
+        <!-- Cards injected by JS -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-nav-buttons">
+      <button class="swiper-btn swiper-btn-prev" id="swiperPrev" aria-label="Previous item">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="swiper-btn swiper-btn-next" id="swiperNext" aria-label="Next item">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STICKY CART BAR ═══════════════ -->
+  <div class="cart-bar" id="cartBar">
+    <div class="cart-bar-inner">
+      <div class="cart-info">
+        <div class="cart-icon-badge">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <div class="cart-text">
+          <span class="cart-items-label" id="cartItemsLabel">No items selected</span>
+          <span class="cart-total" id="cartTotal">₹0</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-order" id="cartOrderBtn" disabled>
+        <i class="fas fa-paper-plane"></i> Order Now
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ABOUT SECTION ═══════════════ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" data-aos="fade-right">
+          <div class="about-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=700&fit=crop" alt="Inside Dawat Cafe" loading="lazy">
+            <div class="about-img-badge">
+              <span>Since</span>
+              <strong>2024</strong>
+            </div>
+          </div>
+        </div>
+        <div class="about-content" data-aos="fade-left">
+          <span class="section-tag"><i class="fas fa-heart"></i> Our Story</span>
+          <h2 class="section-title">A Place Where <span class="text-gradient">Flavors</span> Meet Feelings</h2>
+          <p class="about-text">
+            Welcome to <strong>DAWAT CAFE</strong> — your neighborhood destination for comfort food done right.
+            Born from a passion for bringing people together over great meals, we blend traditional recipes with
+            modern twists to create dishes that warm your soul.
+          </p>
+          <p class="about-text">
+            Every ingredient is handpicked, every recipe is perfected, and every plate is served with love.
+            From our signature pizzas to our steaming momos, we put our heart into everything we make.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+              <div>
+                <h4>Fresh Ingredients</h4>
+                <p>Locally sourced, always fresh</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-truck"></i></div>
+              <div>
+                <h4>Quick Delivery</h4>
+                <p>At your door in 30 minutes</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fas fa-award"></i></div>
+              <div>
+                <h4>Top Rated</h4>
+                <p>4.8 stars from 500+ reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT SECTION ═══════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fas fa-map-marker-alt"></i> Find Us</span>
+        <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+        <p class="section-desc">Visit us or order from the comfort of your home.</p>
+      </div>
+      <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Address</h3>
+          <p>123, Main Market Road,<br>Near City Center, Your City,<br>State — 000000</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Phone</h3>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <h3>Timing</h3>
+          <p>Mon – Sat: 10:00 AM – 11:00 PM</p>
+          <p>Sunday: 11:00 AM – 10:00 PM</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p><a href="mailto:hello@dawatcafe.com">hello@dawatcafe.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <i class="fas fa-mug-hot"></i>
+            <span>DAWAT<span class="logo-accent">CAFE</span></span>
+          </a>
+          <p>Where every bite feels like home. Crafted with passion, served with love.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Opening Hours</h4>
+          <ul>
+            <li>Mon – Sat: 10 AM – 11 PM</li>
+            <li>Sunday: 11 AM – 10 PM</li>
+            <li>Delivery till 10:30 PM</li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123, Main Market Road</li>
+            <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope"></i> hello@dawatcafe.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 DAWAT CAFE. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--accent);"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ ORDER MODAL ═══════════════ -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle"><i class="fas fa-receipt"></i> Your Order</h2>
+        <button class="modal-close" id="modalClose" aria-label="Close order form">&times;</button>
+      </div>
+
+      <div class="modal-body" id="modalBody">
+        <!-- Order Summary -->
+        <div class="order-summary" id="orderSummary">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Order Form -->
+        <form id="orderForm" novalidate>
+          <div class="form-group">
+            <label for="custName"><i class="fas fa-user"></i> Full Name <span class="required">*</span></label>
+            <input type="text" id="custName" name="name" placeholder="Enter your full name" required>
+            <span class="field-error" id="errName"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="custAddress"><i class="fas fa-map-marker-alt"></i> Delivery Address <span class="required">*</span></label>
+            <textarea id="custAddress" name="address" rows="3" placeholder="Enter your complete delivery address" required></textarea>
+            <span class="field-error" id="errAddress"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="custPhone"><i class="fas fa-phone-alt"></i> Phone Number <span class="required">*</span></label>
+            <input type="tel" id="custPhone" name="phone" placeholder="10-digit mobile number" maxlength="10" required>
+            <span class="field-error" id="errPhone"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="custEmail"><i class="fas fa-envelope"></i> Email <span class="optional">(optional)</span></label>
+            <input type="email" id="custEmail" name="email" placeholder="your@email.com">
+            <span class="field-error" id="errEmail"></span>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Delivery Time <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="deliveryOption" value="Under 30 minutes">
+                <span class="radio-custom"></span>
+                <span>Under 30 minutes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="deliveryOption" value="Within 1 hour">
+                <span class="radio-custom"></span>
+                <span>Within 1 hour</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="deliveryOption" value="Tomorrow">
+                <span class="radio-custom"></span>
+                <span>Tomorrow</span>
+              </label>
+            </div>
+            <span class="field-error" id="errDelivery"></span>
+            <div class="time-picker-wrap" id="timePickerWrap" style="display: none;">
+              <label for="deliveryTime"><i class="fas fa-clock"></i> Preferred Time</label>
+              <input type="time" id="deliveryTime" name="deliveryTime">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="custNotes"><i class="fas fa-sticky-note"></i> Additional Notes <span class="optional">(optional)</span></label>
+            <textarea id="custNotes" name="notes" rows="2" placeholder="Any special instructions or queries..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+            <span class="btn-text">Place Order</span>
+            <span class="btn-spinner" id="submitSpinner" style="display:none;">
+              <i class="fas fa-spinner fa-spin"></i> Placing Order...
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="modal-success" id="modalSuccess" style="display:none;">
+        <div class="success-animation">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Order Placed!</h2>
+        <p class="success-order-id" id="successOrderId"></p>
+        <p>Thank you for ordering from Dawat Cafe.<br>We'll have it ready for you soon!</p>
+        <button class="btn btn-primary" id="successCloseBtn">
+          <i class="fas fa-home"></i> Back to Menu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SCRIPTS ═══════════════ -->
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
